@@ -7,6 +7,8 @@
 :info_titleabbrev: Cluster Autoscaler 
 :imagesdir: images/autoscaling/
 
+include::../attributes.txt[]
+
 == Overview
 
 https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler[The
@@ -115,10 +117,10 @@ modifying nodegroups in a different cluster even if the
 nodegroups of the cluster using tags (for example
 `k8s.io/cluster-autoscaler/<cluster-name>`).
 
-[source,json]
+[source,json,subs="verbatim,attributes"]
 ----
 {
-    "Version": "2012-10-17",
+    "Version": "2012-10-17",{tcx5-waiver}
     "Statement": [
         {
             "Effect": "Allow",

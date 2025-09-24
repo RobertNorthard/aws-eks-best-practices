@@ -8,6 +8,8 @@
 :info_titleabbrev: Image security
 :imagesdir: images/
 
+include::../attributes.txt[]
+
 You should consider the container image as your first line of defense
 against an attack. An insecure, poorly constructed image can allow an
 attacker to escape the bounds of the container and gain access to the
@@ -197,10 +199,10 @@ example, all of the registries for team A can be prefaced with the
 team-a/ while those for team B can use the team-b/ prefix. The policy to
 restrict access might look like the following:
 
-[source,json]
+[source,json,subs="verbatim,attributes"]
 ----
 {
-  "Version": "2012-10-17",
+  "Version": "2012-10-17",{tcx5-waiver}
   "Statement": [
     {
       "Sid": "AllowPushPull",

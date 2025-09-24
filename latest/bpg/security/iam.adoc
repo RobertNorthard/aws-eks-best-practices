@@ -8,6 +8,8 @@
 :info_titleabbrev: Identity and Access Management
 :imagesdir: images/
 
+include::../attributes.txt[]
+
 https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html[Identity
 and Access Management] (IAM) is an AWS service that performs two
 essential functions: Authentication and Authorization. Authentication
@@ -888,10 +890,10 @@ with multiple service accounts.
 session tags. The following is an example role trust policy which allows
 EKS Pod Identities to use an IAM role:
 
-[source,json]
+[source,json,subs="verbatim,attributes"]
 ----
 {
-  "Version": "2012-10-17",
+  "Version": "2012-10-17",{tcx5-waiver}
   "Statement": [
     {
       "Effect": "Allow",
@@ -975,10 +977,10 @@ bucket it's attached to, only if `kubernetes-service-account`,
 values, where the EKS cluster is hosted in the AWS account
 `111122223333`.
 
-[source,json]
+[source,json,subs="verbatim,attributes"]
 ----
 {
-    "Version": "2012-10-17",
+    "Version": "2012-10-17",{tcx5-waiver}
     "Statement": [
         {
             "Effect": "Allow",

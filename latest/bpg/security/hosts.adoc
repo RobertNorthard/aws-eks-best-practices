@@ -8,6 +8,8 @@
 :info_titleabbrev: Infrastructure Security
 :imagesdir: images/
 
+include::../attributes.txt[]
+
 Inasmuch as it's important to secure your container images, it's equally
 important to safeguard the infrastructure that runs them. This section
 explores different ways to mitigate risks from attacks launched directly
@@ -125,10 +127,10 @@ would allow for the role to access all parameters in Parameter Store
 The following IAM policy contains the minimal set of permissions to
 enable node access via SSM Systems Manager.
 
-[source,json]
+[source,json,subs="verbatim,attributes"]
 ----
 {
-  "Version": "2012-10-17",
+  "Version": "2012-10-17",{tcx5-waiver}
   "Statement": [
     {
       "Sid": "EnableAccessViaSSMSessionManager",

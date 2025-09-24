@@ -8,6 +8,8 @@
 :info_titleabbrev: Network security
 :imagesdir: images/security/
 
+include::../attributes.txt[]
+
 Network security has several facets. The first involves the application
 of rules which restrict the flow of network traffic between services.
 The second involves the encryption of traffic while it is in transit.
@@ -716,10 +718,10 @@ issuer. Update IAM permissions of the EKS node role to allow access to
 ACM Private CA. Replace the `<CA_ARN>` with the value from your
 Private CA:
 
-[source,json]
+[source,json,subs="verbatim,attributes"]
 ----
 {
-    "Version": "2012-10-17",
+    "Version": "2012-10-17",{tcx5-waiver}
     "Statement": [
         {
             "Sid": "awspcaissuer",

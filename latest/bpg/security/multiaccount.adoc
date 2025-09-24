@@ -8,6 +8,8 @@
 :info_titleabbrev: Multi Account Strategy
 :imagesdir: images/security/
 
+include::../attributes.txt[]
+
 AWS recommends using a
 https://docs.aws.amazon.com/whitepapers/latest/organizing-your-aws-environment/organizing-your-aws-environment.html[multi
 account strategy] and AWS organizations to help isolate and manage your
@@ -270,10 +272,10 @@ only let a role from the EKS cluster account (account ID 111122223333)
 assume a role if the `kubernetes-service-account`, `eks-cluster-arn`
 and `kubernetes-namespace` tags all have the expected value.
 
-[source,json]
+[source,json,subs="verbatim,attributes"]
 ----
 {
-    "Version": "2012-10-17",
+    "Version": "2012-10-17",{tcx5-waiver}
     "Statement": [
         {
             "Effect": "Allow",

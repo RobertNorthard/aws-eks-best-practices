@@ -15,6 +15,9 @@
 :info_abstract: Best Practices for Cluster Upgrades
 :info_titleabbrev: Cluster Upgrades
 
+
+include::../attributes.txt[]
+
 [abstract]
 --
 Learn best practices for cluster upgrades.
@@ -351,7 +354,8 @@ blocks to the VPC.
 To verify that the IAM role is available and has the correct assume role
 policy in your account you can run the following commands:
 
-....
+[source,json,subs="verbatim,attributes"]
+----
 CLUSTER=<cluster name>
 ROLE_ARN=$(aws eks describe-cluster --name ${CLUSTER} \
   --query 'cluster.roleArn' --output text)
@@ -359,7 +363,7 @@ aws iam get-role --role-name ${ROLE_ARN##*/} \
   --query 'Role.AssumeRolePolicyDocument'
   
 {
-    "Version": "2012-10-17",
+    "Version": "2012-10-17",{tcx5-waiver}
     "Statement": [
         {
             "Effect": "Allow",
@@ -370,7 +374,7 @@ aws iam get-role --role-name ${ROLE_ARN##*/} \
         }
     ]
 }
-....
+----
 
 == Migrate to EKS Add-ons
 
